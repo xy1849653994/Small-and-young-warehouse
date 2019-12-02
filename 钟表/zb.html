@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin:0;
+        }
+        .cir{
+            box-sizing: border-box;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:500px;
+            height:500px;
+            border:2px solid gray;
+            border-radius: 50%;
+            margin:50px auto 0;
+            box-shadow: 0 0 0 30px #ccc,
+                        0 0 0 32px #000;
+        }
+        p{
+            position:absolute;
+            transform:translateY(-250px);
+            transform-origin: center 250px;
+            width:10px;
+            height:30px;
+            background-color: #000;
+            opacity:.6;
+        }
+        p:nth-child(1)::after{
+            position:absolute;
+            content:"12";
+            top:-25px;
+            left:-5px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(2){
+            transform:translateY(-250px) rotateZ(30deg);
+        }
+        p:nth-child(2)::after{
+            position:absolute;
+            content:"1";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(3){
+            transform:translateY(-250px) rotateZ(60deg);
+        }
+        p:nth-child(3)::after{
+            position:absolute;
+            content:"2";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(4){
+            transform:translateY(-250px) rotateZ(90deg);
+        }
+        p:nth-child(4)::after{
+            position:absolute;
+            content:"3";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(5){
+            transform:translateY(-250px) rotateZ(120deg);
+        }
+        p:nth-child(5)::after{
+            position:absolute;
+            content:"4";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(6){
+            transform:translateY(-250px) rotateZ(150deg);
+        }
+        p:nth-child(6)::after{
+            position:absolute;
+            content:"5";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(7){
+            transform:translateY(-250px) rotateZ(180deg);
+        }
+        p:nth-child(7)::after{
+            position:absolute;
+            content:"6";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(8){
+            transform:translateY(-250px) rotateZ(210deg);
+        }
+        p:nth-child(8)::after{
+            position:absolute;
+            content:"7";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(9){
+            transform:translateY(-250px) rotateZ(240deg);
+        }
+        p:nth-child(9)::after{
+            position:absolute;
+            content:"8";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(10){
+            transform:translateY(-250px) rotateZ(270deg);
+        }
+        p:nth-child(10)::after{
+            position:absolute;
+            content:"9";
+            top:-25px;
+            left:0px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(11){
+            transform:translateY(-250px) rotateZ(300deg);
+        }
+        p:nth-child(11)::after{
+            position:absolute;
+            content:"10";
+            top:-25px;
+            left:-5px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        p:nth-child(12){
+            transform:translateY(-250px) rotateZ(330deg);
+        }
+        p:nth-child(12)::after{
+            position:absolute;
+            content:"11";
+            top:-25px;
+            left:-5px;
+            color:#000;
+            font-weight: bolder;
+            font-size:20px;
+        }
+        .dot{
+            width: 18px;
+            height: 18px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+        .hours{
+            position: absolute;
+            width: 150px;
+            height: 10px;
+            background-color: #000;
+            transform:translatex(50%) rotate(30deg);
+            transform-origin: 0% 50%;
+        }
+        .min{
+            position: absolute;
+            width: 190px;
+            height: 6px;
+            background-color: #000;
+            transform:translatex(50%) rotate(45deg);
+            transform-origin: 0% 50%;
+        }
+        .sec{
+            position: absolute;
+            width: 220px;
+            height: 2px;
+            background-color: #000;
+            transform:translatex(50%) rotate(90deg);
+            transform-origin: 0% 50%;
+        }
+        span{
+            position: absolute;
+            display: block;
+            width:4px;
+            height:20px;
+            background-color: #ccc;
+            transform:translateY(-240px);
+            transform-origin: center 250px;
+        }
+        span:nth-of-type(1){
+            transform:translateY(-240px) rotateZ(6deg);
+        }
+        span:nth-of-type(2){
+            transform:translateY(-240px) rotateZ(12deg);
+        }
+        span:nth-of-type(3){
+            transform:translateY(-240px) rotateZ(18deg);
+        }
+        span:nth-of-type(4){
+            transform:translateY(-240px) rotateZ(24deg);
+        }
+        span:nth-of-type(5){
+            transform:translateY(-240px) rotateZ(36deg);
+        }
+        span:nth-of-type(6){
+            transform:translateY(-240px) rotateZ(42deg);
+        }
+        span:nth-of-type(7){
+            transform:translateY(-240px) rotateZ(48deg);
+        }
+        span:nth-of-type(8){
+            transform:translateY(-240px) rotateZ(54deg);
+        }
+        span:nth-of-type(9){
+            transform:translateY(-240px) rotateZ(66deg);
+        }
+        span:nth-of-type(10){
+            transform:translateY(-240px) rotateZ(72deg);
+        }
+        span:nth-of-type(11){
+            transform:translateY(-240px) rotateZ(78deg);
+        }
+        span:nth-of-type(12){
+            transform:translateY(-240px) rotateZ(84deg);
+        }
+        span:nth-of-type(13){
+            transform:translateY(-240px) rotateZ(96deg);
+        }
+        span:nth-of-type(14){
+            transform:translateY(-240px) rotateZ(102deg);
+        }
+        span:nth-of-type(15){
+            transform:translateY(-240px) rotateZ(108deg);
+        }
+        span:nth-of-type(16){
+            transform:translateY(-240px) rotateZ(114deg);
+        }
+        span:nth-of-type(17){
+            transform:translateY(-240px) rotateZ(126deg);
+        }
+        span:nth-of-type(18){
+            transform:translateY(-240px) rotateZ(132deg);
+        }
+        span:nth-of-type(19){
+            transform:translateY(-240px) rotateZ(138deg);
+        }
+        span:nth-of-type(20){
+            transform:translateY(-240px) rotateZ(144deg);
+        }
+        span:nth-of-type(21){
+            transform:translateY(-240px) rotateZ(156deg);
+        }
+        span:nth-of-type(22){
+            transform:translateY(-240px) rotateZ(162deg);
+        }
+        span:nth-of-type(23){
+            transform:translateY(-240px) rotateZ(168deg);
+        }
+        span:nth-of-type(24){
+            transform:translateY(-240px) rotateZ(174deg);
+        }
+        span:nth-of-type(25){
+            transform:translateY(-240px) rotateZ(186deg);
+        }
+        span:nth-of-type(26){
+            transform:translateY(-240px) rotateZ(192deg);
+        }
+        span:nth-of-type(27){
+            transform:translateY(-240px) rotateZ(198deg);
+        }
+        span:nth-of-type(28){
+            transform:translateY(-240px) rotateZ(204deg);
+        }
+        span:nth-of-type(29){
+            transform:translateY(-240px) rotateZ(216deg);
+        }
+        span:nth-of-type(30){
+            transform:translateY(-240px) rotateZ(222deg);
+        }
+        span:nth-of-type(31){
+            transform:translateY(-240px) rotateZ(228deg);
+        }
+        span:nth-of-type(32){
+            transform:translateY(-240px) rotateZ(234deg);
+        }
+        span:nth-of-type(33){
+            transform:translateY(-240px) rotateZ(246deg);
+        }
+        span:nth-of-type(34){
+            transform:translateY(-240px) rotateZ(252deg);
+        }
+        span:nth-of-type(35){
+            transform:translateY(-240px) rotateZ(258deg);
+        }
+        span:nth-of-type(36){
+            transform:translateY(-240px) rotateZ(264deg);
+        }
+        span:nth-of-type(37){
+            transform:translateY(-240px) rotateZ(276deg);
+        }
+        span:nth-of-type(38){
+            transform:translateY(-240px) rotateZ(282deg);
+        }
+        span:nth-of-type(39){
+            transform:translateY(-240px) rotateZ(288deg);
+        }
+        span:nth-of-type(40){
+            transform:translateY(-240px) rotateZ(294deg);
+        }
+        span:nth-of-type(41){
+            transform:translateY(-240px) rotateZ(306deg);
+        }
+        span:nth-of-type(42){
+            transform:translateY(-240px) rotateZ(312deg);
+        }
+        span:nth-of-type(43){
+            transform:translateY(-240px) rotateZ(318deg);
+        }
+        span:nth-of-type(44){
+            transform:translateY(-240px) rotateZ(324deg);
+        }
+        span:nth-of-type(45){
+            transform:translateY(-240px) rotateZ(336deg);
+        }
+        span:nth-of-type(46){
+            transform:translateY(-240px) rotateZ(342deg);
+        }
+        span:nth-of-type(47){
+            transform:translateY(-240px) rotateZ(348deg);
+        }
+        span:nth-of-type(48){
+            transform:translateY(-240px) rotateZ(354deg);
+        }
+        #tips{
+            position: absolute;
+            transform: translateY(350px);
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="cir">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <div class="dot"></div>
+        <div class="sec"></div>
+        <div class="min"></div>
+        <div class="hours"></div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div id="tips"></div>
+    </div>
+    <script>
+        let sec=document.querySelector(".sec"),
+            min=document.querySelector(".min"),
+            hours=document.querySelector(".hours"),
+            tips=document.querySelector("#tips");
+
+        let date,h,m,s;
+
+        setInterval(function(){
+            date=new Date;
+            h=date.getHours();
+            m=date.getMinutes();
+            s=date.getSeconds();
+
+            hours.style.transform="translateX(50%) rotate("+((((h+m/60)%12)*360/12)-90)+"deg)";
+            min.style.transform="translateX(50%) rotate("+((((m+s/60)/60)*360)-90)+"deg)";
+            sec.style.transform="translateX(50%) rotate("+(((s/60)*360)-90)+"deg)";
+        },1000/60)
+		var myVar=setInterval(function(){myTimer()},1000);
+		function myTimer(){
+			var d=new Date();
+			var t=d.toLocaleTimeString();
+		document.getElementById("tips").innerHTML=t;
+		}
+    </script>
+</body>
+</html>
